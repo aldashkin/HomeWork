@@ -1,11 +1,22 @@
 package fermer;
 
-abstract public class WildAnimal extends Animal implements Attack{
+public abstract class WildAnimal {
 
-    protected int attackScore;
+    protected int speed; // скорость
+    protected int power; // сила
+    protected int attackAble; // атака
 
-    public WildAnimal(String name, int speed, int health, int attackScore) {
-        super(name, speed, health, attackScore);
-        this.attackScore = attackScore; // дикое животное может наносить урон домашнему
+    public WildAnimal(int speed, int power, int attackAble) {
+        this.speed = speed;
+        this.power = power;
+        this.attackAble = attackAble;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
     }
 }
