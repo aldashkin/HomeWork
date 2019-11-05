@@ -1,13 +1,21 @@
 package fermer;
 
-abstract public class HomeAnimal extends Animal {
+public abstract class HomeAnimal implements fermer.EatAble {
+    protected String name; // имя
+    protected int weight; //вес
+    protected int speed; //скорость
+    protected int health; //здоровье
+    protected int resource; //ресурсы
+    protected boolean eatMe; //съеден
 
-    protected int resources;
-    protected  String name;
-
-    public HomeAnimal(int speed, int health, int resources, String name) {
-        super(speed, health, resources);
-        this.resources = resources;
+    public HomeAnimal(String name, int weight, int speed, int health, int resource, boolean eatMe) {
         this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.health = health;
+        this.resource = resource;
+        this.eatMe = eatMe;
     }
+
+    public abstract void eat();
 }
